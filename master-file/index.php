@@ -26,35 +26,9 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<div class="hero-wrap">
+		<div class="hero-wrap" style="background:url(./images/cover_1.jpg) no-repeat center center/cover;">
 			<!-- Start of Nav -->
-			<nav id="navbar">
-				<img src="images/logo_1.svg" alt="Amazing Store" class="logo">
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Shop</a><i class="fas fa-angle-down"></i> 
-						<ul>
-							<li><a href="#">Item 1</a></li>
-							<li><a href="#">Item 2</a></li>
-							<li><a href="#">Item 3</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Cart</a><i class="fas fa-angle-down"></i> 
-						<ul>
-							<li><a href="#">Check Out</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Contact</a></li>
-					<li class="lastLi">
-						<form>
-							<input type="text" placeholder="Search.." name="search">
-							<button type="submit"><i class="fa fa-search"></i></button>
-						</form>
-					</li>
-				</ul>
-			</nav>
+			<?php include('header.php')?>
 			<!-- End of Nav -->
 
 			<!-- Start of Homepage -->
