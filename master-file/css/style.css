@@ -8,7 +8,26 @@
 body, html {
 	margin: 0;
 	padding: 0;
+	background-image: url(../images/bg_pattern.png);
+	background-repeat: repeat;
 }
+
+/* Header PHP CSS */
+.header-wrap{
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.header-wrap nav .logo {
+	width:200px;
+	margin-left: 50px;
+}
+
+/* Homepage ONLY CSS */
 
 .hero-wrap {
 	width: 100%;
@@ -82,12 +101,36 @@ body, html {
 	z-index: 1; 
 }
 
-.hero-wrap nav .logo {
-	width:200px;
-	margin-left: 50px;
+/* HEADER IMAGE */
+.headerImage {
+	background:url('../images/cover_2.jpg') no-repeat center center/cover;
+	width:100%;
+	height:300px;
+	position: relative;
+	top:94px;
+	left: 0px;
 }
 
-/* Navbar */
+.headerImage::before {
+	content:'';
+	background-color:var(--menuBg-color);
+	opacity:0.5;
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:0;
+}
+
+.headerImage h1 {
+	color:var(--white-color);
+	font-size:3.5rem;
+	text-shadow: 1px 2px 3px var(--main-color);
+	z-index:1;
+}
+
+/* Navbar CSS */
 #navbar {
 	display:flex;
 	justify-content:space-between;
@@ -194,6 +237,14 @@ body, html {
 	top: 550px;
 	left: -175px;
 }
+
+/* Content CSS */
+.main {
+	position: relative;
+	top:50px;
+	padding-bottom:7rem;
+}
+
 
 @media(max-width:1280px){
 

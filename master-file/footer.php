@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>About Us - Amazing Store</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Font Import CSS -->
@@ -15,40 +16,25 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<div class="header-wrap">
-			<!-- Start of Nav -->
-			<nav id="navbar">
-				<a href="index.php">
-					<img src="images/logo_1.svg" alt="Amazing Store" class="logo">
-				</a>
-				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li><a href="about.php">About</a></li>
-					<li><a href="#">Shop</a><i class="fas fa-angle-down"></i> 
-						<ul>
-							<li><a href="#">Item 1</a></li>
-							<li><a href="#">Item 2</a></li>
-							<li><a href="#">Item 3</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Cart</a><i class="fas fa-angle-down"></i> 
-						<ul>
-							<li><a href="#">Check Out</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Contact</a></li>
-					<li class="lastLi">
-						<form>
-							<input type="text" placeholder="Search.." name="search">
-							<button type="submit"><i class="fa fa-search"></i></button>
-						</form>
-					</li>
-				</ul>
-			</nav>
-			<!-- End of Nav -->
-			</div>
-      
+    
+    <!-- Start of Footer -->
+      <footer class="p-3 fixed-bottom border-top" style="background-color: #ffffff;">
+				<div class="container-fluid">
+					<div class="row d-flex align-items-center py-2">
+						<div class="col-lg-6 text-center">
+							<span>Copyright 2019 Amazing Store. All Rights Reserved.</span>
+						</div>
+						<div class="col-lg-6 text-center">
+							<i class='fas fa-envelope fa-md'></i>
+							<span>AmazingStore@gmail.com |</span>
+							<i class="fa fa-phone fa-md"></i>
+							<span>778-846-2263</span>
+						</div>
+					</div>
+				</div>
+			</footer>
+    <!-- End of Footer -->
+  
 		<script src="js/jquery.js"></script>
 		<script src="js/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>

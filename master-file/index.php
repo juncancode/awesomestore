@@ -26,11 +26,11 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<div class="hero-wrap" style="background:url(./images/cover_1.jpg) no-repeat center center/cover;">
 			<!-- Start of Nav -->
-			<?php include('header.php')?>
+			<?php include('header.php');?>
 			<!-- End of Nav -->
 
+			<div class="hero-wrap" style="background:url(./images/cover_1.jpg) no-repeat center center/cover;">
 			<!-- Start of Homepage -->
 			<div class="overlay"></div>
 			<div class="container">
