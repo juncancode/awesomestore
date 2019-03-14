@@ -17,6 +17,8 @@
 		<!-- Font Import CSS -->
 		<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/animate.css">
@@ -24,42 +26,35 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<div class="hero-wrap" style="background-image: url('images/cover_1.jpg');">
+		<div class="hero-wrap">
 			<!-- Start of Nav -->
-			<nav class="navbar navbar-expand-lg navbar-light fixed-top">
-					<a class="navbar-brand" href="#"><img src="images/logo_1.svg" alt="logo" class="logo"></a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-				
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav mr-auto">
-							<li class="nav-item active">
-								<a class="nav-link" href="#">Home</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">About</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Shop
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#">Item 1</a>
-									<a class="dropdown-item" href="#">Item 2</a>
-									<a class="dropdown-item" href="#">item 3</a>
-								</div>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">cart</a>
-							</li>
+			<nav id="navbar">
+				<img src="images/logo_1.svg" alt="Amazing Store" class="logo">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Shop</a><i class="fas fa-angle-down"></i> 
+						<ul>
+							<li><a href="#">Item 1</a></li>
+							<li><a href="#">Item 2</a></li>
+							<li><a href="#">Item 3</a></li>
 						</ul>
-						<form class="form-inline my-2 my-lg-0">
-							<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-							<button class="btn my-2 my-sm-0" type="submit">Search</button>
+					</li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Cart</a><i class="fas fa-angle-down"></i> 
+						<ul>
+							<li><a href="#">Check Out</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Contact</a></li>
+					<li class="lastLi">
+						<form>
+							<input type="text" placeholder="Search.." name="search">
+							<button type="submit"><i class="fa fa-search"></i></button>
 						</form>
-					</div>
-				</nav>
+					</li>
+				</ul>
+			</nav>
 			<!-- End of Nav -->
 
 			<!-- Start of Homepage -->
@@ -69,8 +64,8 @@
 					<h3 class="v">Collectible Relics Since - 1985 relics</h3>
 					<h3 class="vr">Copyright 2019 Amazing Store. All Rights Reserved.</h3>
 					<div class="col-md-11 ftco-animate text-center">
-						<h1>L'incroyable Magasin</h1>
-						<h2><span>Embrace Your Art</span></h2>
+						<h1 id="homeHeader">L'incroyable Magasin</h1>
+						<h2 id="homeSub"><span>Embrace Your Art</span></h2>
 					</div>
 					<div class="mouse">
 						<a href="#" class="mouse-icon">
