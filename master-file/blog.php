@@ -37,55 +37,37 @@
 				<hr/>
 				<div class="blogMain">
 					<!-- First Row -->
-					<div class="thumbImage">
-						<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-						<div class="thumbDesc">
-							<h5>News 1</h5>
-							<p>Description</p>
-							<button class="btn btn-primary">View Art</button>
-						</div>
+					<div>
+						<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" class="blogImage"/>
+						<h5>Rembrandt…? Attribution of two Paintings in Mauritshuis Collection to be Researched</h5>
+						<p>After the exhibition Rembrandt and the Mauritshuis has ended, the Mauritshuis will embark on new research into two paintings in its collection to determine whether or not they are indeed by Rembrandt. The works in question are Study of an Old Man from 1650 and ‘Tronie’ of an Old Man from c. 1630-31. Both were purchased as genuine Rembrandts by then Mauritshuis director Abraham Bredius, in 1891 and 1892, but are today considered ‘doubtful’ by the museum. Both paintings will also be thoroughly restored.<br/><a href="blog-post.php">Read more ></a></p>
 					</div>
-					<div class="thumbImage">
-						<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-						<div>
-							<h5>News 2</h5>
-							<p>Description</p>
-							<button class="btn btn-primary">View Art</button>
-						</div>
+					<div>
+						<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" class="blogImage"/>
+						<h5>Rembrandt…? Attribution of two Paintings in Mauritshuis Collection to be Researched</h5>
+						<p>After the exhibition Rembrandt and the Mauritshuis has ended, the Mauritshuis will embark on new research into two paintings in its collection to determine whether or not they are indeed by Rembrandt. The works in question are Study of an Old Man from 1650 and ‘Tronie’ of an Old Man from c. 1630-31. Both were purchased as genuine Rembrandts by then Mauritshuis director Abraham Bredius, in 1891 and 1892, but are today considered ‘doubtful’ by the museum. Both paintings will also be thoroughly restored.<br/><a href="blog-post.php">Read more ></a></p>
 					</div>
-					<div class="thumbImage">
-						<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-						<div>
-							<h5>News 3</h5>
-							<p>Description</p>
-							<button class="btn btn-primary">View Art</button>
-						</div>
+					<div>
+						<img src="webdev-file/images/art/works/square-medium/001020.jpg" class="blogImage"/>
+						<h5>Rembrandt…? Attribution of two Paintings in Mauritshuis Collection to be Researched</h5>
+						<p>After the exhibition Rembrandt and the Mauritshuis has ended, the Mauritshuis will embark on new research into two paintings in its collection to determine whether or not they are indeed by Rembrandt. The works in question are Study of an Old Man from 1650 and ‘Tronie’ of an Old Man from c. 1630-31. Both were purchased as genuine Rembrandts by then Mauritshuis director Abraham Bredius, in 1891 and 1892, but are today considered ‘doubtful’ by the museum. Both paintings will also be thoroughly restored.<br/><a href="blog-post.php">Read more ></a></p>
 					</div>
 					<!-- End of First Row -->
 					<!-- Second Row -->
-					<div class="thumbImage">
-						<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-						<div>
-							<h5>News 4</h5>
-							<p>Description</p>
-							<button class="btn btn-primary">View Art</button>
-						</div>
+					<div>
+						<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" class="blogImage"/>
+						<h5>Rembrandt…? Attribution of two Paintings in Mauritshuis Collection to be Researched</h5>
+						<p>After the exhibition Rembrandt and the Mauritshuis has ended, the Mauritshuis will embark on new research into two paintings in its collection to determine whether or not they are indeed by Rembrandt. The works in question are Study of an Old Man from 1650 and ‘Tronie’ of an Old Man from c. 1630-31. Both were purchased as genuine Rembrandts by then Mauritshuis director Abraham Bredius, in 1891 and 1892, but are today considered ‘doubtful’ by the museum. Both paintings will also be thoroughly restored.<br/><a href="blog-post.php">Read more ></a></p>
 					</div>
-					<div class="thumbImage">
-						<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-						<div>
-							<h5>News 5</h5>
-							<p>Description</p>
-							<button class="btn btn-primary">View Art</button>
-						</div>
+					<div>
+						<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" class="blogImage"/>
+						<h5>Rembrandt…? Attribution of two Paintings in Mauritshuis Collection to be Researched</h5>
+						<p>After the exhibition Rembrandt and the Mauritshuis has ended, the Mauritshuis will embark on new research into two paintings in its collection to determine whether or not they are indeed by Rembrandt. The works in question are Study of an Old Man from 1650 and ‘Tronie’ of an Old Man from c. 1630-31. Both were purchased as genuine Rembrandts by then Mauritshuis director Abraham Bredius, in 1891 and 1892, but are today considered ‘doubtful’ by the museum. Both paintings will also be thoroughly restored.<br/><a href="blog-post.php">Read more ></a></p>
 					</div>
-					<div class="thumbImage">
-						<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-						<div>
-							<h5>News 6</h5>
-							<p>Description</p>
-							<button class="btn btn-primary">View Art</button>
-						</div>
+					<div>
+						<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" class="blogImage"/>
+						<h5>Rembrandt…? Attribution of two Paintings in Mauritshuis Collection to be Researched</h5>
+						<p>After the exhibition Rembrandt and the Mauritshuis has ended, the Mauritshuis will embark on new research into two paintings in its collection to determine whether or not they are indeed by Rembrandt. The works in question are Study of an Old Man from 1650 and ‘Tronie’ of an Old Man from c. 1630-31. Both were purchased as genuine Rembrandts by then Mauritshuis director Abraham Bredius, in 1891 and 1892, but are today considered ‘doubtful’ by the museum. Both paintings will also be thoroughly restored.<br/><a href="blog-post.php">Read more ></a></p>
 					</div>
 				</div>
 			</div>
