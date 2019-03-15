@@ -21,7 +21,9 @@
 			<!-- End of Nav -->
 
 			<!-- Start of Header Image -->
-			<?php include('headerimage.php');?>
+			<div class="headerImage d-flex align-items-center justify-content-center">
+				<h1 class="text-center">OUR AMAZING TEAM</h1>
+			</div>
 			<!-- End of Header Image -->
 
 			<!-- Start of Content -->

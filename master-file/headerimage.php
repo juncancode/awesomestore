@@ -18,9 +18,7 @@
 	<body>
 
 		<!-- Start of Header Image -->
-		<div class="headerImage d-flex align-items-center justify-content-center">
-      <h1 class="text-center">OUR AMAZING TEAM</h1>
-    </div>
+		
     <!-- End of Header Image -->
 				
 		<script src="js/jquery.js"></script>
