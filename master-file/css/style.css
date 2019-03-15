@@ -8,8 +8,6 @@
 body, html {
 	margin: 0;
 	padding: 0;
-	background-image: url(../images/bg_pattern.png);
-	background-repeat: repeat;
 }
 
 /* Header PHP CSS */
@@ -107,7 +105,7 @@ body, html {
 	width:100%;
 	height:300px;
 	position: relative;
-	top:94px;
+	top: 94px;
 	left: 0px;
 }
 
@@ -154,15 +152,15 @@ body, html {
 }
 
 #navbar ul li {
-  color: #333;
-  display: inline-block;
-  padding:1rem;
-  position: relative;
+	color: #333;
+	display: inline-block;
+	padding:1rem;
+	position: relative;
 }
 
 #navbar ul li a {
-  color:var(--white-color);
-  text-decoration: none;
+	color:var(--white-color);
+	text-decoration: none;
 }
 
 #navbar form input {
@@ -175,7 +173,7 @@ body, html {
 
 /* Hide nested ul by default */
 #navbar ul li ul {
-  display: none;
+	display: none;
 }
 
 #navbar ul li li {
@@ -183,13 +181,13 @@ body, html {
 }
 
 #navbar ul li:hover {
-  cursor: pointer;
-  background: var(--primary-color);
-  color:var(--white-color);
+	cursor: pointer;
+	background: var(--primary-color);
+	color:var(--white-color);
 }
 
 #navbar ul li:hover a {
-  color:var(--white-color);
+	color:var(--white-color);
 } 
 
 .fas {
@@ -204,19 +202,19 @@ body, html {
 
 /* Nested dropdown show */
 #navbar ul li:hover ul {
-  display: block;
-  position: absolute;
-  left: 0;
-  width: 200px;
-  margin-top: 1rem;
+	display: block;
+	position: absolute;
+	left: 0;
+	width: 200px;
+	margin-top: 1rem;
 }
 
 #navbar ul li:hover ul li {
-  display: block;
+	display: block;
 }
 
 #navbar ul li:hover ul li a {
-  color:var(--white-color);
+	color:var(--white-color);
 }
 
 #navbar ul li:hover ul li:hover {
@@ -238,13 +236,73 @@ body, html {
 	left: -175px;
 }
 
+/* Modal CSS */
+
+.modal-header {
+	border-top-left-radius: 0 !important;
+	border-top-right-radius:0 !important;
+	border-bottom: 0 !important;
+}
+
+.modal-content {
+	border: 0 !important;
+	border-radius: 0 !important;
+}
+
 /* Content CSS */
+.main1 {
+	position: relative;
+	top:50px;
+	padding-bottom:3rem;
+	line-height: 2;
+}
+
 .main {
 	position: relative;
 	top:50px;
 	padding-bottom:7rem;
+	line-height: 2;
 }
 
+.shopMain {
+	grid-template-columns: repeat(3,250px);
+	grid-template-rows: repeat(3,260px);
+	grid-gap: 2rem;
+	display: grid;
+	padding-bottom:7rem;
+	justify-items: center;
+	align-items: center;
+}
+
+.filter {
+	position: relative;
+	top: 150px;
+}
+
+.shopContent {
+	position: relative;
+	top: 150px;
+}
+
+.thumbImage {
+	display: grid;
+}
+
+.blogContent {
+	position: relative;
+	top: 150px;
+}
+
+.blogMain {
+	grid-template-columns: repeat(3,250px);
+	grid-template-rows: repeat(2,260px);
+	grid-gap: 2rem;
+	display: grid;
+	padding-bottom:7rem;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+}
 
 @media(max-width:1280px){
 
@@ -263,11 +321,28 @@ body, html {
 	#homeHeader { 
 		left: 0px;
 	}
-	
+
 	#homeSub {
 		left: 0px;
 	}
 
+}
+
+@media(max-width:1180px){
+	
+	.shopMain {
+		grid-template-columns: 350px;
+		grid-template-rows: auto;
+		justify-items: left;
+		align-items: left;
+		padding-left: 2rem;
+	}
+	
+	.thumbImage {
+		grid-template-columns: repeat(2,1fr);
+		grid-gap: 2rem;
+	}
+	
 }
 
 @media(max-width:850px){
@@ -275,25 +350,25 @@ body, html {
 	#navbar {
 		text-align: center;
 	}
-	
+
 }
 
 
 @media(max-width: 600px) {
-  #navbar ul li {
-    display: block;
-  }
-
-  #navbar ul li:hover ul {
-    width: 100%;
-    position: relative;
+	#navbar ul li {
+		display: block;
 	}
-	
+
+	#navbar ul li:hover ul {
+		width: 100%;
+		position: relative;
+	}
+
 	#homeHeader { 
 		top: 800px;
 		left: 0px;
 	}
-	
+
 	#homeSub {
 		top: 800px;
 		eft: 0px;

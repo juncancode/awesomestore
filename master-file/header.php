@@ -24,14 +24,14 @@
 				<ul>
 					<li><a href="index.php">Home</a></li>
 					<li><a href="about.php">About</a></li>
-					<li><a href="#">Shop</a><i class="fas fa-angle-down"></i> 
+					<li><a href="shop.php">Shop</a><i class="fas fa-angle-down"></i> 
 						<ul>
 							<li><a href="#">Item 1</a></li>
 							<li><a href="#">Item 2</a></li>
 							<li><a href="#">Item 3</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Blog</a></li>
+					<li><a href="blog.php">Blog</a></li>
 					<li><a href="#">Cart</a><i class="fas fa-angle-down"></i> 
 						<ul>
 							<li><a href="#">Check Out</a></li>
