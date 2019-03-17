@@ -312,6 +312,51 @@ body, html {
 	top: 150px;
 }
 
+/* Shop Detailed */
+section {
+	padding-top:120px;
+	margin-bottom:200px;
+}
+
+section .name {
+	color:var(--menuBg-color);
+}
+
+.far,
+.fas {
+	color:var(--menuBg-color);
+}
+
+.fa-shopping-cart {
+	color:var(--main-color);
+}
+
+.nav-item a {
+	color:var(--main-color);
+}
+
+button:hover {
+	color:var(--white-color) !important;
+}
+
+.btn-labeled {
+	background:var(--main-color);
+	color:var(--white-color);
+	padding-top:0;
+	padding-bottom:0;
+	border:none;
+}
+
+.btn-label {
+	position: relative;
+	left:-12px;
+	display:inline-block;
+	padding:6px 12px;
+	background:var(--white-color);
+	border-radius:3px 0 0 3px;
+	border:1px solid var(--main-color);
+}
+
 .thumbImage {
 	display: grid;
 }
@@ -485,3 +530,4 @@ body, html {
 	color: #000000; }
 .hero-wrap.hero-bread {
 	padding: 7em 0; }
+

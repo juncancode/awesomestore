@@ -81,7 +81,7 @@
 							<div class="thumbDesc">
 								<h5>Art 1</h5>
 								<p>CAD 10,000</p>
-								<button class="btn btn-primary">View Art</button>
+								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
 							</div>
 						</div>
 						<div class="thumbImage">
@@ -89,7 +89,7 @@
 							<div>
 								<h5>Art 2</h5>
 								<p>CAD 10,000</p>
-								<button class="btn btn-primary">View Art</button>
+								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
 							</div>
 						</div>
 						<div class="thumbImage">
@@ -97,7 +97,7 @@
 							<div>
 								<h5>Art 3</h5>
 								<p>CAD 10,000</p>
-								<button class="btn btn-primary">View Art</button>
+								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
 							</div>
 						</div>
 						<!-- End of First Row -->
@@ -107,7 +107,7 @@
 							<div>
 								<h5>Art 4</h5>
 								<p>CAD 10,000</p>
-								<button class="btn btn-primary">View Art</button>
+								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
 							</div>
 						</div>
 						<div class="thumbImage">
@@ -115,7 +115,7 @@
 							<div>
 								<h5>Art 5</h5>
 								<p>CAD 10,000</p>
-								<button class="btn btn-primary">View Art</button>
+								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
 							</div>
 						</div>
 						<div class="thumbImage">
@@ -123,7 +123,7 @@
 							<div>
 								<h5>Art 6</h5>
 								<p>CAD 10,000</p>
-								<button class="btn btn-primary">View Art</button>
+								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
 							</div>
 						</div>
 						<!-- End of Second Row -->
@@ -133,7 +133,7 @@
 							<div>
 								<h5>Art 7</h5>
 								<p>CAD 10,000</p>
-								<button class="btn btn-primary">View Art</button>
+								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
 							</div>
 						</div>
 						<div class="thumbImage">
@@ -141,7 +141,7 @@
 							<div>
 								<h5>Art 8</h5>
 								<p>CAD 10,000</p>
-								<button class="btn btn-primary">View Art</button>
+								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
 							</div>
 						</div>
 						<div class="thumbImage">
@@ -149,7 +149,7 @@
 							<div>
 								<h5>Art 9</h5>
 								<p>CAD 10,000</p>
-								<button class="btn btn-primary">View Art</button>
+								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
 							</div>
 						</div>
 						<!-- End of Third Row -->

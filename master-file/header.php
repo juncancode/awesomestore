@@ -37,7 +37,6 @@
 							<li><a href="#">Check Out</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Contact</a></li>
 					<li class="lastLi">
 						<form>
 							<input type="text" placeholder="Search.." name="search">
