@@ -1,3 +1,42 @@
+<?php
+include 'includes/art-config.inc.php';
+include 'includes/art-functions.inc.php';
+
+$default = 406;
+if (isset($_GET['id'])) {
+    $default = $_GET['id']; 
+}
+try {
+    
+    $dbpaint = new PaintingDB($pdo);
+    $row = $dbpaint->findById($default);
+    
+    $dbgenre = new GenreDB($pdo);
+    $genres = $dbgenre->findForPainting($default);  
+    
+    $dbsubject = new SubjectDB($pdo);
+    $subjects = $dbsubject->findForPainting($default);    
+    
+    $dbreview = new ReviewDB($pdo);
+    $reviews= $dbreview->findForPainting($default);   
+    $averageRating = round($dbreview->AverageForPainting($default)); 
+    
+    $dbglass = new GlassDB($pdo);
+    $glasses = $dbglass->getAll();    
+    
+    $dbframe = new FrameDB($pdo);
+    $frames = $dbframe->getAll();   
+    
+    $dbmatte = new MatteDB($pdo);
+    $mattes = $dbmatte->getAll();     
+    
+    
+}
+catch (PDOException $e) {
+   die( $e->getMessage() );
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -29,13 +68,19 @@
 		<section class="container">
 			<div class="row">
 				<div class="col-lg-6 p-5 align-self-top">
-					<img src="webdev-file/images/together.jpg" alt="nude"  class="img-fluid border">
+					<!-- <img src="webdev-file/images/together.jpg" alt="nude"  class="img-fluid border"> -->
+					<img src="images/art/works/medium/<?php echo  $row['ImageFileName']; ?>.jpg" alt="..." class="ui big image" id="artwork">
 				</div>
 				<div class="col-lg-6">
 					<article class="my-3">
-						<h2>The Anatomy Lessn of Dr.Nicolaes Tulp</h2>
-						<h3 class="name">Rembrandt</h3>
-						<p>The Anatomy Lesson of Dr. Nicolaes Tulp is a 1632 oil painting by Rembrandt housed in the Mauritshuis museum in The Hague, the Netherlands.</p>					
+						<h2>
+							<?php echo  utf8_encode($row['Title']); ?>
+						</h2>
+						<h3 class="name">
+							<?php echo utf8_encode($row['FirstName'] . ' ' . $row['LastName']); ?>
+						</h3>
+						<p><?php echo generateRatingStars($averageRating); ?></p>		
+						<p><?php echo  utf8_encode($row['Excerpt']); ?></p>			
 						<ul class="nav nav-tabs" id="myTab" role="tablist">
 							<li class="nav-item">
 								<a class="nav-link" id="details-tab" data-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="true"><i class="far fa-image fa-lg"></i> Details</a>
@@ -56,19 +101,27 @@
 									<tbody>
 										<tr>
 											<th scope="row">Artist</th>
-											<td>Rembrandt</td>
+											<td>
+												<?php echo generateLink('single-artist.php?id=' . $row['ArtistID'], utf8_encode($row['FirstName'] . ' ' . $row['LastName'])); ?>
+											</td>
 										</tr>
 										<tr>
 											<th scope="row">Year</th>
-											<td>1622</td>
+											<td>
+												<?php echo  $row['YearOfWork']; ?>
+											</td>
 										</tr>
 										<tr>
 											<th scope="row">Medium</th>
-											<td>Oil on canvas</td>
+											<td>
+												<?php echo  $row['Medium']; ?>
+											</td>
 										</tr>
 										<tr>
 											<th scope="row">Dimensions</th>
-											<td>216cm x 170cm</td>
+											<td>
+												<?php echo  $row['Width']; ?>cm x <?php echo  $row['Height']; ?>cm
+											</td>
 										</tr>
 									</tbody>
 								</table>
@@ -78,39 +131,55 @@
 									<tbody>
 										<tr>
 											<th scope="row">Museum</th>
-											<td>Royal Picture gallery Mauritshuis</td>
+											<td>
+												 <?php echo generateLink('single-gallery.php?id='.$row['GalleryID'], $row['GalleryName']); ?>
+											</td>
 										</tr>
 										<tr>
 											<th scope="row">Assession #</th>
-											<td>146</td>
+											<td>         
+												<?php echo  $row['AccessionNumber']; ?>
+											</td>
 										</tr>
 										<tr>
 											<th scope="row">Copyright</th>
-											<td>Private Use Only</td>
+											<td>            
+												<?php echo  $row['CopyrightText']; ?>
+											</td>
 										</tr>
 										<tr>
 											<th scope="row">URL</th>
-											<td><a href="#">View painting at museum site</a></td>
+											<td>
+												<a href="#">    <?php echo generateLink($row['MuseumLink'],"View painting at museum site"); ?></a>
+										</td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
 							<div class="tab-pane fade" id="genres" role="tabpanel" aria-labelledby="genres-tab">
-								<ul class="list-group">
-									<li class="list-group-item">Baroque</li>
-									<li class="list-group-item">Dutch Golden Age</li>
+								<ul class="list-group-item">
+								 <?php foreach ($genres as $gen) { ?>
+									<li class="list-item">
+										<?php echo $gen['GenreName']; ?>
+									</li>
+									<?php } ?>
 								</ul>
 							</div>
 							<div class="tab-pane fade" id="subjects" role="tabpanel" aria-labelledby="subjects-tab">
-								<ul class="list-group">
-									<li class="list-group-item">People</li>
-									<li class="list-group-item">Science</li>
+								<ul class="list-group-item">
+									<?php foreach ($subjects as $sub) { ?>
+										<li class="list-item ml-3">
+											<?php echo $sub['SubjectName']; ?>
+										</li>
+									<?php } ?>
 								</ul>
 							</div>
 						</div>
 					</article>
 					<article class="border rounded p-3">
-						<h2>$ 1,200</h2>
+						<h2>
+							<?php echo  '$' . number_format($row['MSRP'],0); ?>
+						</h2>
 						<form>
 							<div class="form-row">
 								<div class="col-md-3 mb-3">
@@ -119,25 +188,33 @@
 								</div>
 								<div class="col-md-3 mb-3">
 									<label for="">Frame</label>
-									<select class="form-control">
-										<option value="">Ansley</option>
-										<option value="">Canyon</option>
+									<select id="frame" class="form-control">
+									<?php foreach ($frames as $frame) { ?>
+                    <option>
+                      <?php echo $frame['Title']; ?> [ $<?php echo number_format($frame['Price'],0); ?> ]
+                    </option>
+                  <?php } ?>
 									</select>
 								</div>
 								<div class="col-md-3 mb-3">
 									<label for="">Glass</label>
-									<select class="form-control">
-										<option value="">Clear</option>
-										<option value="">Museum</option>
-									</select>
+									<select id="glass" class="form-control">
+                  <?php foreach ($glasses as $glass) { ?>
+                    <option>
+                      <?php echo $glass['Title']; ?> [ $<?php echo number_format($glass['Price'],0); ?> ]
+                    </option>
+                  <?php } ?>
+                </select>
 								</div>
 								<div class="col-md-3 mb-3">
 									<label for="">Matt</label>
-									<select class="form-control">
-										<option value="">Dawn Grey</option>
-										<option value="">Gold</option>
-										<option value="">Silver</option>
-									</select>
+									<select id="matt" class="form-control">
+                  <?php foreach ($mattes as $matt) { ?>
+                    <option>
+                      <?php echo $matt['Title']; ?> 
+                    </option>
+                  <?php } ?>
+                </select>
 								</div>
 							</div>
 						</form>

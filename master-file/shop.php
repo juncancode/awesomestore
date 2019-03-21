@@ -1,3 +1,72 @@
+<?php
+
+include 'includes/art-config.inc.php';
+
+try {
+    
+    // connect and retrieve data for filters    
+    $artistDB = new ArtistDB($pdo);
+    $artists = $artistDB->getAll();   
+    
+    $galleryDB = new GalleryDB($pdo);
+    $galleries = $galleryDB->getAll(); 
+    
+    $shapeDB = new ShapeDB($pdo);
+    $shapes = $shapeDB->getAll();    
+    
+    
+    // now retrieve paintings ... either all or a subset
+    $paintDB = new PaintingDB($pdo);
+    
+    // filter by artist?
+    if (isset($_GET['artist']) && ! empty($_GET['artist'])) {
+        $paintings = $paintDB->findByArtist($_GET['artist']);
+        
+        $artist = $artistDB->findById($_GET['artist']);
+        $filter = 'Artist = ' . makeArtistName($artist['FirstName'],$artist['LastName']) ;
+    }
+    
+    // filter by museum?
+    if (isset($_GET['museum']) && ! empty($_GET['museum'])) {
+        $paintings = $paintDB->findByGallery($_GET['museum']);
+        
+        $museum = $galleryDB->findById($_GET['museum']);
+        $filter = 'Museum = ' . utf8_encode($museum['GalleryName']);
+    }    
+    
+    // filter by shape?
+    if (isset($_GET['shape']) && ! empty($_GET['shape'])) {
+        $paintings = $paintDB->findByShape($_GET['shape']);
+        
+        $shape = $shapeDB->findById($_GET['shape']);
+        $filter = 'Shape = ' . $shape['ShapeName'];
+    }     
+                                            
+    if (! isset($paintings) || $paintings->rowCount() == 0) {
+        $paintings = $paintDB->getAll();
+        $filter = "All Paintings [Top 20]";
+    }
+    
+        
+}
+catch (PDOException $e) {
+   die( $e->getMessage() );
+}
+
+function outputOptions($data, $valueField, $dataField) {
+  while ($single = $data->fetch()) { 
+    echo '<option value=' . $single[$valueField] . '>';
+    echo utf8_encode($single[$dataField]);
+    echo '</option>'; 
+  }       
+}
+
+function makeArtistName($first, $last) {
+    return utf8_encode($first . ' ' . $last);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -35,124 +104,65 @@
 						<div class="input-group-prepend">
 							<label class="input-group-text" for="XXX">By Artist</label>
 						</div>
-						<select class="custom-select" id="XXX">
-							<option selected>--</option>
-							<option value="">A</option>
-							<option value="">B</option>
-							<option value="">C</option>
-							<option value="">D</option>
-						</select>
+						<select class="ui fluid dropdown custom-select" name="artist">
+              <option value='0'>Select Artist</option>  
+              <?php  
+                outputOptions($artists, 'ArtistID', 'LastName');
+              ?>
+            </select>
 					</div>
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
 							<label class="input-group-text" for="XXX">By Museum</label>
 						</div>
-						<select class="custom-select" id="XXX">
-							<option selected>--</option>
-							<option value="">A</option>
-							<option value="">B</option>
-							<option value="">C</option>
-							<option value="">D</option>
-						</select>
+						<select class="ui fluid dropdown custom-select" name="museum">
+              <option value='0'>Select Museum</option>  
+              <?php  
+                outputOptions($galleries, 'GalleryID', 'GalleryName');
+              ?>
+            </select>
 					</div>
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
 							<label class="input-group-text" for="XXX">By Price</label>
 						</div>
-						<select class="custom-select" id="XXX">
-							<option selected>--</option>
-							<option value="">A</option>
-							<option value="">B</option>
-							<option value="">C</option>
-							<option value="">D</option>
-						</select>
+						<select class="ui fluid dropdown custom-select" name="shape">
+              <option value='0'>Select Shape</option>  
+              <?php  
+                outputOptions($shapes, 'ShapeID', 'ShapeName');
+              ?>
+            </select>
 					</div>
-					<button type="button" class="btn btn-primary">Filter Result</button>
+					<button type="submit" class="btn button">Filter Result</button>
 				</div>
+
 				<div class="shopContent py-3 px-4 col-lg-9">
 					<h3>The Amazing Collection</h3>
 					<hr/>
 					<p class="lead">All of the amazing works of art by well-known artists now can also be admired online. From Van Gogh to Picasso, all of the exquisite painting collections can be found in this website. In order to preserve their natural uniqueness and quality, we tried to maintain the art pieces in a highly guarded environment.</p>
 					<hr/>
+
 					<div class="shopMain">
-						<!-- First Row -->
-						<div class="thumbImage">
-							<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-							<div class="thumbDesc">
-								<h5>Art 1</h5>
-								<p>CAD 10,000</p>
-								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
-							</div>
-						</div>
-						<div class="thumbImage">
-							<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-							<div>
-								<h5>Art 2</h5>
-								<p>CAD 10,000</p>
-								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
-							</div>
-						</div>
-						<div class="thumbImage">
-							<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-							<div>
-								<h5>Art 3</h5>
-								<p>CAD 10,000</p>
-								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
-							</div>
-						</div>
-						<!-- End of First Row -->
-						<!-- Second Row -->
-						<div class="thumbImage">
-							<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-							<div>
-								<h5>Art 4</h5>
-								<p>CAD 10,000</p>
-								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
-							</div>
-						</div>
-						<div class="thumbImage">
-							<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-							<div>
-								<h5>Art 5</h5>
-								<p>CAD 10,000</p>
-								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
-							</div>
-						</div>
-						<div class="thumbImage">
-							<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-							<div>
-								<h5>Art 6</h5>
-								<p>CAD 10,000</p>
-								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
-							</div>
-						</div>
-						<!-- End of Second Row -->
-						<!-- Third Row -->
-						<div class="thumbImage">
-							<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-							<div>
-								<h5>Art 7</h5>
-								<p>CAD 10,000</p>
-								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
-							</div>
-						</div>
-						<div class="thumbImage">
-							<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-							<div>
-								<h5>Art 8</h5>
-								<p>CAD 10,000</p>
-								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
-							</div>
-						</div>
-						<div class="thumbImage">
-							<img src="webdev-file/images/art/works/square-medium/001020.jpg" alt="Art 1" />
-							<div>
-								<h5>Art 9</h5>
-								<p>CAD 10,000</p>
-								<a href="detailed-painting.php"><button class="btn btn-primary">View Art</button></a>
-							</div>
-						</div>
-						<!-- End of Third Row -->
+					<ul class="list-group items" id="paintingsList">
+            
+						<?php  while ($work = $paintings->fetch()) { ?>
+	
+						<li class="item">
+							<a class="ui small image" href="detailed-painting.php?id=<?php echo $work['PaintingID']; ?>"><img src="images/art/works/square-medium/<?php echo $work['ImageFileName']; ?>.jpg"></a>
+							<div class="content">
+								<a class="header" href="detailed-painting.php?id=<?php echo $work['PaintingID']; ?>"><?php echo utf8_encode($work['Title']); ?></a>
+								<div class="meta"><span class="cinema"><?php echo makeArtistName($work['FirstName'],$work['LastName']); ?></span></div>       
+								<div class="meta">     
+										<strong><?php echo '$' . number_format($work['MSRP'],0); ?></strong>        
+								</div>        
+								<div class="extra">
+									<a class="ui icon orange button" href="cart.php?id=<?php echo $work['PaintingID']; ?>"><i class="add to cart icon"></i></a>
+									<a class="ui icon button" href="favorites.php?id=<?php echo $work['PaintingID']; ?>"><i class="heart icon"></i></a>        
+								</div>        
+							</div>      
+						</li>							
+						<?php } ?>
+						</ul> 
 					</div>
 				</div>
 			</div>

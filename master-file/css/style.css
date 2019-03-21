@@ -265,7 +265,6 @@ body, html {
 }
 
 /* Modal CSS */
-
 .modal-header {
 	border-top-left-radius: 0 !important;
 	border-top-right-radius:0 !important;
@@ -293,13 +292,17 @@ body, html {
 }
 
 .shopMain {
-	grid-template-columns: repeat(3,250px);
-	grid-template-rows: repeat(3,260px);
 	grid-gap: 2rem;
-	display: grid;
 	padding-bottom:7rem;
-	justify-items: center;
-	align-items: center;
+	grid-template-columns: 350px;
+	grid-template-rows: auto;
+	justify-items: left;
+	align-items: left;
+	padding-left: 2rem;
+}
+
+.shopMain li {
+	list-style: none;
 }
 
 .filter {
@@ -357,35 +360,11 @@ button:hover {
 	border:1px solid var(--main-color);
 }
 
-.thumbImage {
-	display: grid;
-}
 
-.blogContent {
-	position: relative;
-	top: 150px;
-	padding-bottom:7rem;
-}
-
-.blogMain {
-	grid-template-columns: repeat(3,1fr);
-	grid-template-rows: repeat(2,1fr);
-	grid-gap: 2rem;
-	display: grid;
-	padding-bottom:7rem;
-	justify-content: center;
-	justify-items: center;
-	align-items: center;
-}
-
-.blogImage {
-	display: block;
-	justify-content: center;
-	justify-items:center;
-	align-content: center;
-	align-items: center;
-	text-align: center;
-	margin: auto;
+#paintingsList {
+	display:grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap:100px;
 }
 
 @media(max-width:1280px){
@@ -414,13 +393,11 @@ button:hover {
 
 @media(max-width:1180px){
 	
-	.shopMain {
-		grid-template-columns: 350px;
-		grid-template-rows: auto;
-		justify-items: left;
-		align-items: left;
-		padding-left: 2rem;
-	}
+	#paintingsList {
+		display:grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap:100px;
+	}	
 	
 	.thumbImage {
 		grid-template-columns: repeat(2,1fr);
@@ -430,25 +407,38 @@ button:hover {
 	.blogMain {
 		grid-template-columns: repeat(2,1fr);
 		grid-template-rows: auto;
-	}
+	
 	
 }
 
 @media(max-width:850px){
 
+	#paintingsList {
+		display:grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap:100px;
+	}	
+
 	#navbar {
 		text-align: center;
 	}
 		
-	.blogMain {
-		grid-template-columns: repeat(1,1fr);
+	.shopMain {
+		grid-template-columns:1fr;
 		grid-template-rows: auto;
 	}
-
 }
 
-
 @media(max-width: 600px) {
+
+	#paintingsList {
+		display:grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap:100px;
+		justify-content: center;
+		align-items:center;
+	}	
+
 	#navbar ul li {
 		display: block;
 	}
@@ -467,11 +457,21 @@ button:hover {
 		top: 800px;
 		left: 0px;
 	}
+
+	.shopMain {
+		grid-template-columns: repeat(1,1fr);
+		grid-template-rows: auto;
+	}
 	
+	.shopMain ul {
+		justify-content: center;
+		align-items:center;
+		justify-items: center;
+		margin-bottom:100px;
+	}
 }
 
 /* Media Queries */
-
 @media (max-width: 991.98px) {
 	.hero-wrap .slider-text .v, .hero-wrap .slider-text .vr {
 		display: none; } }
